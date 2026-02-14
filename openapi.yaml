@@ -1,0 +1,84 @@
+openapi: 3.0.4
+info:
+  title: Stock Index
+  description: >-
+    Stock Index is a tool for retrieving current and historical stock market
+    index values. It supports the S&P 500, Dow Jones, Nasdaq Composite, VIX,
+    Nikkei 225, and more.
+  termsOfService: https://apiverve.com/terms/
+  contact:
+    name: APIVerve Support
+    email: hello@apiverve.com
+    url: https://apiverve.com/contact
+  version: 1.0.0
+externalDocs:
+  description: Learn more about APIVerve
+  url: https://docs.apiverve.com?utm_source=openapi
+servers:
+  - url: https://api.apiverve.com/
+paths:
+  /v1/stockindex:
+    get:
+      summary: Get Stock Index Value
+      description: >-
+        Get the current or historical value for a stock market index. Supported
+        indexes: sp500, dowjones, dowjonestransportation, nasdaq, vix,
+        nikkei225.
+      operationId: stockindex
+      parameters:
+        - name: index
+          in: query
+          schema:
+            type: string
+          required: true
+          description: The index to retrieve
+          example: sp500
+        - name: year
+          in: query
+          schema:
+            type: integer
+          required: false
+          description: >-
+            Specific year to retrieve all daily values for (2010-present).
+            Returns latest if not specified.
+          example: 2023
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: status
+                  error:
+                    type: string
+                    description: error
+                  data:
+                    type: object
+                    description: data
+              example:
+                status: ok
+                error: null
+                data:
+                  index: sp500
+                  name: S&P 500
+                  value: 6882.72
+                  date: '2026-02-04'
+                  lastUpdated: '2026-02-07T12:00:00.000Z'
+        '401':
+          description: Your request was not authorized, or your API Key was invalid
+        '404':
+          description: Requested resource was not found
+        '500':
+          description: A server error has occurred, try again later
+components:
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: x-api-key
+      in: header
+security:
+  - api_key: []
