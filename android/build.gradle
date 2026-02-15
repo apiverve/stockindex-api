@@ -1,0 +1,55 @@
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+}
+
+group = 'com.apiverve'
+version = '1.1.13'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+dependencies {
+    implementation 'org.json:json:20231013'
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = 'com.apiverve'
+            artifactId = 'stockindex-api'
+            version = '1.1.13'
+
+            from components.java
+
+            pom {
+                name = 'Stock Index'
+                description = 'Stock Index is a tool for retrieving current and historical stock market index values. It supports the S&P 500, Dow Jones, Nasdaq Composite, VIX, Nikkei 225, and more.'
+                url = 'https://apiverve.com'
+
+                licenses {
+                    license {
+                        name = 'MIT License'
+                        url = 'https://opensource.org/licenses/MIT'
+                    }
+                }
+
+                developers {
+                    developer {
+                        id = 'apiverve'
+                        name = 'APIVerve'
+                        email = 'hello@apiverve.com'
+                    }
+                }
+
+                scm {
+                    connection = 'scm:git:git://github.com/apiverve/stockindex-api.git'
+                    developerConnection = 'scm:git:ssh://github.com/apiverve/stockindex-api.git'
+                    url = 'https://github.com/apiverve/stockindex-api'
+                }
+            }
+        }
+    }
+}
