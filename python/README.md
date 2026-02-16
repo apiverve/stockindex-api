@@ -44,7 +44,10 @@ from apiverve_stockindex.apiClient import StockindexAPIClient
 # Initialize the client with your APIVerve API key
 api = StockindexAPIClient("[YOUR_API_KEY]")
 
-query = { "index": "sp500", "year": 2023 }
+query = {
+    "index": "sp500",
+    "year": 2023
+}
 
 try:
     # Make the API call
@@ -82,7 +85,10 @@ Using the API client, you can perform requests to the API.
 ###### Define Query
 
 ```python
-query = { "index": "sp500", "year": 2023 }
+query = {
+    "index": "sp500",
+    "year": 2023
+}
 ```
 
 ###### Simple Request
@@ -124,7 +130,10 @@ from apiverve_stockindex.apiClient import StockindexAPIClient, StockindexAPIClie
 
 api = StockindexAPIClient("[YOUR_API_KEY]")
 
-query = { "index": "sp500", "year": 2023 }
+query = {
+    "index": "sp500",
+    "year": 2023
+}
 
 try:
     result = api.execute(query)
@@ -145,7 +154,10 @@ from apiverve_stockindex.apiClient import StockindexAPIClient, StockindexAPIClie
 
 api = StockindexAPIClient("[YOUR_API_KEY]")
 
-query = { "index": "sp500", "year": 2023 }
+query = {
+    "index": "sp500",
+    "year": 2023
+}
 
 try:
     result = api.execute(query)
@@ -179,7 +191,10 @@ The client supports the context manager protocol for automatic resource cleanup:
 ```python
 from apiverve_stockindex.apiClient import StockindexAPIClient, StockindexAPIClientError
 
-query = { "index": "sp500", "year": 2023 }
+query = {
+    "index": "sp500",
+    "year": 2023
+}
 
 # Using context manager ensures proper cleanup
 with StockindexAPIClient("[YOUR_API_KEY]") as api:
@@ -205,7 +220,10 @@ from apiverve_stockindex.apiClient import StockindexAPIClient
 # Enable debug mode
 api = StockindexAPIClient("[YOUR_API_KEY]", debug=True)
 
-query = { "index": "sp500", "year": 2023 }
+query = {
+    "index": "sp500",
+    "year": 2023
+}
 
 # Debug information will be printed to console
 result = api.execute(query)
@@ -220,8 +238,12 @@ from apiverve_stockindex.apiClient import StockindexAPIClient
 
 api = StockindexAPIClient("[YOUR_API_KEY]")
 
+query = {
+    "index": "sp500",
+    "year": 2023
+}
+
 try:
-    query = { "index": "sp500", "year": 2023 }
     result = api.execute(query)
     print(result)
 finally:
