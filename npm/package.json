@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/stockindex",
-  "version": "1.1.13",
+  "version": "1.1.14",
   "description": "Stock Index is a tool for retrieving current and historical stock market index values. It supports the S&P 500, Dow Jones, Nasdaq Composite, VIX, Nikkei 225, and more.",
   "main": "index.js",
   "types": "index.d.ts",
