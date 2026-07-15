@@ -30,7 +30,7 @@ class stockindexWrapper {
         this.baseURL = 'https://api.apiverve.com/v1/stockindex';
 
         // Validation rules for parameters (generated from schema)
-        this.validationRules = {"index":{"type":"string","required":true},"year":{"type":"integer","required":false,"min":2010,"max":2030}};
+        this.validationRules = {"index":{"type":"string","required":true},"year":{"type":"integer","required":false,"min":2010,"max":2030},"month":{"type":"integer","required":false,"min":1,"max":12}};
     }
 
     /**
