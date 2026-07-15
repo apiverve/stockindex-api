@@ -16,7 +16,8 @@ const api = new stockindexAPI({
 // Example query
 var query = {
   index: "sp500",
-  year: 2023
+  year: 2023,
+  month: 6
 };
 
 // Make the API request using callback
