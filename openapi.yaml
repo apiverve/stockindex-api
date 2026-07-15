@@ -38,10 +38,15 @@ paths:
           schema:
             type: integer
           required: false
-          description: >-
-            Specific year to retrieve all daily values for (2010-present).
-            Returns latest if not specified.
+          description: Year to retrieve data for (2010-present). Requires month parameter.
           example: 2023
+        - name: month
+          in: query
+          schema:
+            type: integer
+          required: false
+          description: Month to retrieve data for (1-12). Required when year is specified.
+          example: 6
       responses:
         '200':
           description: Successful Response
@@ -65,9 +70,16 @@ paths:
                 data:
                   index: sp500
                   name: S&P 500
-                  value: 6882.72
-                  date: '2026-02-04'
-                  lastUpdated: '2026-02-07T12:00:00.000Z'
+                  year: 2023
+                  month: 6
+                  count: 21
+                  entries:
+                    - date: '2023-06-01'
+                      value: 4221.02
+                    - date: '2023-06-02'
+                      value: 4282.37
+                    - date: '2023-06-05'
+                      value: 4273.79
         '401':
           description: Your request was not authorized, or your API Key was invalid
         '404':
