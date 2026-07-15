@@ -1,13 +1,13 @@
-# [Stock Index API](https://apiverve.com/marketplace/stockindex?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+# [Stock Index API](https://stockindex.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
 
 Stock Index is a tool for retrieving current and historical stock market index values. It supports the S&amp;P 500, Dow Jones, Nasdaq Composite, VIX, Nikkei 225, and more.
 
 The Stock Index API provides a simple, reliable way to integrate stock index functionality into your applications. Built for developers who need production-ready stock index capabilities without the complexity of building from scratch.
 
-**[View API Details →](https://apiverve.com/marketplace/stockindex?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)**
+**[View API Details →](https://stockindex.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/stockindex?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://stockindex.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
 [![Method](https://img.shields.io/badge/Method-GET-blue.svg)](#)
 [![Platform](https://img.shields.io/badge/Platform-Multi--Platform-orange.svg)](#installation)
 
@@ -30,7 +30,11 @@ The Stock Index API provides a simple, reliable way to integrate stock index fun
 ```javascript
 async function callStockIndexAPI() {
     try {
-        const response = await fetch('https://api.apiverve.com/v1/stockindex', {
+        const params = new URLSearchParams({
+            index: 'sp500'
+        });
+
+        const response = await fetch(`https://api.apiverve.com/v1/stockindex?${params}`, {
             method: 'GET',
             headers: {
                 'x-api-key': 'YOUR_API_KEY_HERE'
@@ -50,7 +54,7 @@ callStockIndexAPI();
 ### Using cURL
 
 ```bash
-curl -X GET "https://api.apiverve.com/v1/stockindex?param=value" \
+curl -X GET "https://api.apiverve.com/v1/stockindex?index=sp500" \
   -H "x-api-key: YOUR_API_KEY_HERE"
 ```
 
@@ -150,14 +154,14 @@ go get github.com/apiverve/stockindex-api/go
 |---------|---------|
 | **Multi-language SDKs** | Native packages for JavaScript, Python, C#, Go, and Android |
 | **Simple Integration** | Single API key authentication, consistent response format |
-| **Production Ready** | 99.9% uptime, fast response times, used by thousands of developers |
+| **Production Ready** | 99.9% uptime SLA, served from 24 global regions |
 | **Comprehensive Docs** | Full examples, OpenAPI spec, and dedicated support |
 
 ---
 
 ## Documentation
 
-- 🏠 **API Home:** [Stock Index API](https://apiverve.com/marketplace/stockindex?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home:** [Stock Index API](https://stockindex.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
 - 📚 **API Reference:** [docs.apiverve.com/ref/stockindex](https://docs.apiverve.com/ref/stockindex)
 - 📖 **OpenAPI Spec:** [openapi.yaml](./openapi.yaml)
 - 💡 **Examples:** [examples/](./examples/)
@@ -169,7 +173,7 @@ go get github.com/apiverve/stockindex-api/go
 The Stock Index API is commonly used for:
 
 - **Web Applications** - Add stock index features to your frontend or backend
-- **Mobile Apps** - Native SDKs for iOS and Android development
+- **Mobile Apps** - Native SDKs for Android development
 - **Automation** - Integrate with n8n, Zapier, or custom workflows
 - **SaaS Products** - Enhance your product with stock index capabilities
 - **Data Pipelines** - Process and analyze data at scale
@@ -199,7 +203,7 @@ All responses are JSON with this structure:
 
 ## Support & Community
 
-- 🏠 **API Home**: [Stock Index API](https://apiverve.com/marketplace/stockindex?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home**: [Stock Index API](https://stockindex.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
 - 💬 **Support**: [https://apiverve.com/contact](https://apiverve.com/contact)
 - 🐛 **Issues**: [GitHub Issues](../../issues)
 - 📖 **Documentation**: [https://docs.apiverve.com](https://docs.apiverve.com)
