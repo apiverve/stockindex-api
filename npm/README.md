@@ -7,7 +7,7 @@ Stock Index is a tool for retrieving current and historical stock market index v
 ![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 [![npm version](https://img.shields.io/npm/v/@apiverve/stockindex.svg)](https://www.npmjs.com/package/@apiverve/stockindex)
 
-This is a Javascript Wrapper for the [Stock Index API](https://apiverve.com/marketplace/stockindex?utm_source=npm&utm_medium=readme)
+This is a Javascript Wrapper for the [Stock Index API](https://stockindex.apiverve.com?utm_source=npm&utm_medium=readme)
 
 ---
 
@@ -61,7 +61,8 @@ Using the API is simple. All you have to do is make a request. The API will retu
 ```javascript
 var query = {
   index: "sp500",
-  year: 2023
+  year: 2023,
+  month: 6
 };
 
 api.execute(query, function (error, data) {
@@ -82,7 +83,8 @@ You can also use promises to make requests. The API returns a promise that you c
 ```javascript
 var query = {
   index: "sp500",
-  year: 2023
+  year: 2023,
+  month: 6
 };
 
 api.execute(query)
@@ -104,7 +106,8 @@ You can also use async/await to make requests. The API returns a promise that yo
 async function makeRequest() {
     var query = {
   index: "sp500",
-  year: 2023
+  year: 2023,
+  month: 6
 };
 
     try {
@@ -127,9 +130,23 @@ async function makeRequest() {
   "data": {
     "index": "sp500",
     "name": "S&P 500",
-    "value": 6882.72,
-    "date": "2026-02-04",
-    "lastUpdated": "2026-02-07T12:00:00.000Z"
+    "year": 2023,
+    "month": 6,
+    "count": 21,
+    "entries": [
+      {
+        "date": "2023-06-01",
+        "value": 4221.02
+      },
+      {
+        "date": "2023-06-02",
+        "value": 4282.37
+      },
+      {
+        "date": "2023-06-05",
+        "value": 4273.79
+      }
+    ]
   }
 }
 ```
