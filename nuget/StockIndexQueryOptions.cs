@@ -17,9 +17,15 @@ namespace APIVerve.API.StockIndex
         public string Index { get; set; }
 
         /// <summary>
-        /// Specific year to retrieve all daily values for (2010-present). Returns latest if not specified.
+        /// Year to retrieve data for (2010-present). Requires month parameter.
         /// </summary>
         [JsonProperty("year")]
-        public string Year { get; set; }
+        public int? Year { get; set; }
+
+        /// <summary>
+        /// Month to retrieve data for (1-12). Required when year is specified.
+        /// </summary>
+        [JsonProperty("month")]
+        public int? Month { get; set; }
     }
 }
